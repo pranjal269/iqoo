@@ -1,0 +1,55 @@
+/* Clickable journey + Verifier Desk concept layout. */
+.journey { display: flex; flex-wrap: wrap; gap: var(--space-5); align-items: flex-start; }
+.journey-wide { flex-direction: column; }
+.journey-stage { display: flex; }
+
+.proto-controls {
+  width: 300px;
+  background: var(--surface);
+  border: 1px dashed var(--ink-2);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.journey-wide .proto-controls { width: 980px; max-width: 100%; }
+.proto-controls-title { font-weight: 700; font-size: var(--fs-support); text-transform: uppercase; letter-spacing: 0.04em; }
+.proto-choice { display: flex; flex-direction: column; gap: var(--space-2); }
+.proto-nav { display: flex; gap: var(--space-2); }
+.proto-button {
+  font: inherit;
+  font-size: var(--fs-support);
+  font-weight: 600;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--ink-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.proto-button-primary { background: var(--info-bg); border-color: var(--info); color: var(--info); }
+.proto-button:disabled { opacity: 0.45; cursor: default; }
+
+/* Verifier Desk concept */
+.vd-stages { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.vd-stage {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.vd-stage-label { font-size: var(--fs-micro); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-2); }
+.vd-verdict { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-4); align-items: start; }
+.vd-checks { width: 100%; border-collapse: collapse; font-size: var(--fs-support); }
+.vd-checks th { text-align: left; font-size: var(--fs-micro); text-transform: uppercase; color: var(--ink-2); padding: var(--space-2); border-bottom: 1px solid var(--line); }
+.vd-checks td { padding: var(--space-2); border-bottom: 1px solid var(--line); vertical-align: top; }
+.vd-check-name { font-weight: 700; }
+.vd-visuals { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+
+/* View switch */
+.view-switch { display: flex; gap: var(--space-2); }
+.view-switch .proto-button[aria-pressed='true'] { background: var(--ink); color: var(--surface); border-color: var(--ink); }

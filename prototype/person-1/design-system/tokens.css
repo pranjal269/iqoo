@@ -1,0 +1,54 @@
+/* PRAMAAN design tokens — Day 2 Phase 2.
+   System font stack only (no third-party fonts). Status is never conveyed by colour alone (Day 1 A1/A2). */
+:root {
+  /* Typography */
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', Consolas, 'Liberation Mono', monospace;
+  --fs-title: 22px;     /* screen title */
+  --fs-heading: 17px;   /* status / section heading */
+  --fs-body: 15px;      /* instruction and body */
+  --fs-support: 13px;   /* supporting text */
+  --fs-micro: 11px;     /* stamps, sample tags */
+  --lh: 1.4;
+
+  /* Spacing (4px scale) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+
+  /* Neutrals */
+  --ink: #1b1f24;
+  --ink-2: #4a5360;
+  --surface: #ffffff;
+  --canvas: #eef1f4;
+  --line: #d7dce2;
+  --viewfinder: #2a3038;
+
+  /* Status tones — always paired with a text label */
+  --genuine: #1f7a4d;
+  --genuine-bg: #e6f4ec;
+  --review: #8a5a00;
+  --review-bg: #fff4d1;
+  --fraudulent: #a8322a;
+  --fraudulent-bg: #fbeceb;
+  --info: #1f5fa8;
+  --info-bg: #e8f0fb;
+  --warning: #8a5a00;
+  --warning-bg: #fff4d1;
+  --neutral: #515b68;
+  --neutral-bg: #eceff3;
+
+  /* Stamps */
+  --stamp-bg: #2b2f36;
+  --stamp-ink: #ffffff;
+
+  /* Phone frame (phone-first, rule-compliance D1) */
+  --phone-w: 360px;
+  --phone-h: 740px;
+}

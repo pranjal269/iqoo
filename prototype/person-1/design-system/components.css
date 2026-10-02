@@ -1,0 +1,288 @@
+/* PRAMAAN design-system component styles — Day 2 Phase 2. Uses tokens.css only. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: var(--lh);
+  color: var(--ink);
+  background: var(--canvas);
+}
+
+h2, h3, p { margin: 0; }
+
+.support { font-size: var(--fs-support); color: var(--ink-2); }
+
+/* Phone frame */
+.phone-wrap { margin: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.phone-caption { font-size: var(--fs-support); color: var(--ink-2); }
+.phone-caption-id { font-weight: 700; color: var(--ink); }
+.phone {
+  width: var(--phone-w);
+  height: var(--phone-h);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.phone-stamp {
+  background: var(--stamp-bg);
+  color: var(--stamp-ink);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: var(--space-2) var(--space-3);
+}
+.phone-body {
+  flex: 1;
+  padding: var(--space-5) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow-y: auto; /* long content scrolls inside the phone instead of being clipped */
+}
+.phone-body .push-bottom { margin-top: auto; }
+/* Primary action pinned to the bottom of a scrolling screen, so it is always visible */
+.phone-body .sticky-action {
+  position: sticky;
+  bottom: calc(-1 * var(--space-5));
+  margin: 0 calc(-1 * var(--space-4)) calc(-1 * var(--space-5));
+  padding: var(--space-3) var(--space-4) var(--space-5);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+/* Screen title */
+.screen-title { display: flex; flex-direction: column; gap: var(--space-1); }
+.screen-title h2 { font-size: var(--fs-title); font-weight: 700; }
+
+/* Sample tag */
+.sample-tag {
+  display: inline-block;
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  color: var(--neutral);
+  background: var(--neutral-bg);
+  border-radius: 4px;
+  padding: 1px var(--space-1);
+  white-space: nowrap;
+}
+
+/* Status card */
+.status-card {
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.status-card-head { display: flex; align-items: center; gap: var(--space-2); }
+.status-card-head h3 { font-size: var(--fs-heading); font-weight: 700; }
+.status-card-icon { display: inline-flex; }
+.status-card-body { font-size: var(--fs-body); color: var(--ink); }
+.tone-genuine { background: var(--genuine-bg); border-color: var(--genuine); }
+.tone-genuine .status-card-head { color: var(--genuine); }
+.tone-review { background: var(--review-bg); border-color: var(--review); }
+.tone-review .status-card-head { color: var(--review); }
+.tone-fraudulent { background: var(--fraudulent-bg); border-color: var(--fraudulent); }
+.tone-fraudulent .status-card-head { color: var(--fraudulent); }
+.tone-instruction { background: var(--info-bg); border-color: var(--info); }
+.tone-instruction .status-card-head { color: var(--info); }
+.tone-warning { background: var(--warning-bg); border-color: var(--warning); }
+.tone-warning .status-card-head { color: var(--warning); }
+
+/* Score badge */
+.score-badge {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+}
+.score-badge-label { font-size: var(--fs-support); color: var(--ink-2); font-weight: 600; }
+.score-badge-value { font-size: 28px; font-weight: 700; }
+
+/* Status chip — status word is the label; tones distinguish uncertainty from failure (A6) */
+.status-chip {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 2px var(--space-2);
+  white-space: nowrap;
+}
+.status-PASS { color: var(--genuine); background: var(--genuine-bg); }
+.status-FAIL { color: var(--fraudulent); background: var(--fraudulent-bg); }
+.status-LOW_CONFIDENCE { color: var(--neutral); background: var(--neutral-bg); }
+.status-UNAVAILABLE { color: var(--neutral); background: var(--neutral-bg); }
+
+/* Reason list */
+.reason-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.reason-row { padding: var(--space-2) 0; border-top: 1px solid var(--line); }
+.reason-row:last-child { border-bottom: 1px solid var(--line); }
+.reason-row-head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); }
+.reason-row-check { font-size: var(--fs-support); font-weight: 700; }
+.reason-row-text { font-size: var(--fs-support); color: var(--ink-2); margin-top: 2px; }
+
+/* Primary button */
+.primary-button-wrap { display: flex; flex-direction: column; gap: var(--space-1); }
+.primary-button {
+  font: inherit;
+  font-weight: 700;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--surface);
+}
+.primary-button:disabled { background: var(--neutral-bg); color: var(--neutral); }
+.button-reason { font-size: var(--fs-support); color: var(--ink-2); text-align: center; }
+
+/* Location indicator */
+.location-indicator {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+}
+.location-indicator.tone-info { background: var(--info-bg); color: var(--info); }
+.location-indicator.tone-warning { background: var(--warning-bg); color: var(--warning); }
+.location-indicator-text { font-weight: 600; color: var(--ink); }
+
+/* Capture instruction */
+.capture-instruction {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--info-bg);
+}
+.capture-instruction-icon { color: var(--info); display: inline-flex; }
+.capture-instruction-text { font-weight: 700; }
+
+/* Limitation notice */
+.limitation-notice {
+  font-size: var(--fs-support);
+  font-weight: 600;
+  padding: var(--space-3);
+  border-left: 4px solid var(--ink);
+  background: var(--neutral-bg);
+  border-radius: 4px;
+}
+
+/* Certificate card */
+.certificate-card {
+  border: 1px dashed var(--ink-2);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.certificate-card-head { display: flex; align-items: center; gap: var(--space-2); }
+.certificate-card-head h3 { font-size: var(--fs-heading); }
+.certificate-stamp {
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  color: var(--stamp-ink);
+  background: var(--stamp-bg);
+  padding: 2px var(--space-2);
+  border-radius: 4px;
+  align-self: flex-start;
+}
+.certificate-fields { margin: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+.certificate-field { display: flex; justify-content: space-between; gap: var(--space-3); font-size: var(--fs-support); }
+.certificate-field dt { color: var(--ink-2); }
+.certificate-field dd { margin: 0; font-weight: 600; text-align: right; }
+.certificate-signing { font-size: var(--fs-support); font-weight: 600; }
+
+/* Viewfinder placeholder */
+.viewfinder {
+  position: relative;
+  flex: 1;
+  min-height: 240px;
+  border-radius: var(--radius);
+  background: var(--viewfinder);
+  color: #cfd5dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+.viewfinder-note {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  right: var(--space-2);
+  font-size: var(--fs-micro);
+  text-align: center;
+  opacity: 0.8;
+}
+
+.certificate-section { display: flex; flex-direction: column; gap: var(--space-1); padding-top: var(--space-2); border-top: 1px solid var(--line); }
+.certificate-section h4 { margin: 0; font-size: var(--fs-micro); text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-2); }
+
+/* Conceptual visual (stamp on the visual itself, claim-audit C-9) */
+.concept-visual {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.concept-visual figcaption { font-size: var(--fs-support); font-weight: 700; }
+.concept-visual svg { width: 100%; height: auto; display: block; }
+.concept-stamp {
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  color: var(--stamp-ink);
+  background: var(--stamp-bg);
+  padding: 2px var(--space-2);
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+/* Laptop frame (Verifier Desk is a laptop application, PRD FR-7) */
+.laptop-wrap { margin: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.laptop {
+  width: 980px;
+  max-width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.laptop-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-support);
+  font-weight: 700;
+}
+.laptop-body { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-4); }
+
+/* Check list (Checking screen) */
+.check-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.check-list li {
+  font-weight: 600;
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}

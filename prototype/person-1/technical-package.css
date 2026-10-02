@@ -1,0 +1,63 @@
+/* Technical & evidence package (Phase 4). Uses design-system tokens only. */
+.tech-package { display: flex; flex-direction: column; gap: var(--space-6); max-width: 980px; }
+.tech-package h4 { margin: 0; font-size: var(--fs-heading); }
+
+/* Architecture */
+.arch { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.arch-head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.arch-head h3 { margin: 0; font-size: var(--fs-heading); }
+.arch-stamp {
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  color: var(--stamp-ink);
+  background: var(--stamp-bg);
+  padding: 2px var(--space-2);
+  border-radius: 4px;
+}
+.arch-boundary { border: 2px dashed var(--info); border-radius: var(--radius); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); }
+.arch-boundary-laptop { border-color: var(--ink-2); }
+.arch-boundary-label { font-size: var(--fs-micro); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--info); }
+.arch-boundary-laptop .arch-boundary-label { color: var(--ink-2); }
+.arch-stage { background: var(--canvas); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); display: flex; flex-direction: column; gap: var(--space-1); }
+.arch-stage-title { font-weight: 700; }
+.arch-stage-n {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--ink); color: var(--surface); font-size: var(--fs-micro); margin-right: var(--space-1);
+}
+.arch-stage-body { font-size: var(--fs-support); color: var(--ink-2); }
+.arch-tech { font-size: var(--fs-micro); font-weight: 600; color: var(--neutral); }
+.arch-checks { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); }
+.arch-check { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-1); font-size: var(--fs-support); }
+.arch-check span { color: var(--ink-2); }
+.arch-arrow { text-align: center; color: var(--ink-2); font-size: 18px; line-height: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.arch-arrow span { font-size: var(--fs-support); }
+.arch-table { width: 100%; border-collapse: collapse; font-size: var(--fs-support); margin-top: var(--space-3); }
+.arch-table th { text-align: left; font-size: var(--fs-micro); text-transform: uppercase; color: var(--ink-2); padding: var(--space-2); border-bottom: 1px solid var(--line); }
+.arch-table td { padding: var(--space-2); border-bottom: 1px solid var(--line); vertical-align: top; }
+.arch-table td:first-child { font-weight: 700; }
+
+/* Check explainers */
+.explainers { display: flex; flex-direction: column; gap: var(--space-4); }
+.explainer { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); }
+.explainer-visuals { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.explainer-visuals .concept-visual svg { max-height: 190px; }
+/* Narrow screens: stack the side-by-side columns so nothing spills past the page edge (Day 2 Phase 6 QA). */
+@media (max-width: 560px) {
+  .arch-checks, .explainer-visuals { grid-template-columns: 1fr; }
+}
+
+/* Certificate manifest */
+.manifest { background: var(--surface); border: 1px dashed var(--ink-2); border-radius: var(--radius); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-3); }
+.manifest-head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.manifest-head h3 { margin: 0; font-size: var(--fs-heading); }
+.manifest-code { margin: 0; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.55; background: var(--canvas); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); overflow-x: auto; }
+.manifest-line { white-space: pre; }
+.manifest-comment { color: var(--neutral); font-style: italic; }
+
+/* Problem evidence */
+.evidence { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-3); }
+.evidence-framing { font-weight: 600; }
+.evidence-table { width: 100%; border-collapse: collapse; font-size: var(--fs-support); }
+.evidence-table th { text-align: left; font-size: var(--fs-micro); text-transform: uppercase; color: var(--ink-2); padding: var(--space-2); border-bottom: 1px solid var(--line); }
+.evidence-table td { padding: var(--space-2); border-bottom: 1px solid var(--line); vertical-align: top; }
