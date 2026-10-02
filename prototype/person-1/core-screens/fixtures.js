@@ -11,6 +11,8 @@ export const SAMPLE_SITE = 'demo-site-03';
 export const SAMPLE_GPS = {
   acquiringAccuracy: '12 m',
   fixAccuracy: '8.2 m',
+  // SC-04 V-TIMEOUT (Day 3, P2-Q1): best-available fix after a GPS timeout. Coarse sample, same as the V-NR sample.
+  timeoutAccuracy: '30 m',
 };
 
 // Certificate fields shared by all variants (PRD §7 manifest schema). No hash, key or signature exists.

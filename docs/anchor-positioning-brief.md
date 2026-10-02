@@ -27,29 +27,29 @@ Both projects are **offline, on-device, sensor-fusion trust systems**, and both 
 |---|---|---|
 | Question answered | *Can this phone's **location** be trusted?* | *Was this **photo/video** genuinely captured live, here, now, by this camera?* |
 | Object of trust | The device's position | The **media artifact** |
-| Location's role | The whole answer | **One of three checks** (with motion consistency and screen/recapture detection), fused together |
+| Location's role | The whole answer | **One of three checks** (with Motion Consistency and FFT-based Moiré / Recapture Detection), fused together |
 | Attack in focus | GPS/location spoofing | Photo-of-a-photo / screen recapture, reused old images, photos of a different site (CAG Karnataka 13/2025, evidence E2) |
 | Output | (not publicly stated) | A **certificate** attached to the media, which a **second party** can check independently (Verifier Desk) |
 
-**Core line:** *Anchor-style location trust answers "where is the phone?" PRAMAAN answers "is this photo real evidence?" A genuine GPS fix doesn't stop someone photographing an old photo on a screen while standing at the right site. That is the CAG's documented case.*
+**Core line:** *Anchor-style location trust answers "where is the phone?" PRAMAAN is designed to answer "is this capture genuine evidence?" A correct location alone does not show whether an image was captured live or recaptured from a screen, and the CAG documented a photo "captured from existing photograph" (E2, p. 116).*
 
 Note to self: this argument holds **regardless** of how good Anchor is. It rests on the object of trust, not on Anchor being weak. Keep it that way.
 
 ## 5. Where honest uncertainty remains
-- Anchor may already do (or add at the Finale) some media checks. Our distinction then narrows to recapture detection + a verifiable certificate + the welfare-audit framing.
-- Location binding is the component where we overlap most, so we should **not** lead with geofencing. Lead with recapture (E2 quote 1), then the certificate.
+- Anchor may already do (or add at the Finale) some media checks. Our distinction then narrows to FFT-based Moiré / Recapture Detection + a verifiable certificate + the welfare-audit framing.
+- Geofence / Location Binding is the component where we overlap most, so we should **not** lead with geofencing. Lead with recapture (E2 quote 1), then the certificate.
 - Whether judges score "complementary" or "duplicate". Mitigation: frame it as layers, "location trust is necessary, not sufficient."
 
 ## 6. Draft copy (claim-audited: C-7 pass)
 
-**Stand-out paragraph (form, draft):**
-> Offline, on-device trust tools for *location* already exist. At the Bengaluru City Battle, Team Nexus's Anchor was one. PRAMAAN targets a different object: the **photo itself**. In MGNREGS, the geotagged photo is the proof that releases public money, and the CAG's 2025 Karnataka audit found photos "captured from existing photograph[s]", photos of a different site, and one photo reused across stages. A correct GPS fix doesn't catch any of these. PRAMAAN is designed to fuse three checks (motion consistency, location binding and screen-recapture detection) into a certificate a second party can verify offline. Everything will be built live on the iQOO 15 during the event.
+**Stand-out paragraph (form, draft; Day 3: replaced with the audited `docs/submission-draft.md` §6 text):**
+> Offline, on-device trust tools for location already exist; at the Bengaluru City Battle, Team Nexus's Anchor was one. PRAMAAN targets a different object: the capture itself. In MGNREGS the geo-tagged photograph is the proof that releases public money, and the CAG's 2025 Karnataka audit found photos "captured from existing photograph", a photo of a different shed, and the same photos reused across stages. A correct location alone does not show whether an image was captured live or recaptured from a screen. PRAMAAN is designed to fuse three checks, Motion Consistency, Geofence / Location Binding and FFT-based Moiré / Recapture Detection, into a certificate a second party can check independently. The checks, the certificate signing and the Verifier Desk will all be built live during the event, the phone app on the iQOO 15.
 
-**One-liner for the deck:** "Location trust tells you where the phone is. PRAMAAN is designed to tell you whether the picture is real."
+**One-liner for the deck:** "Location trust tells you where the phone is. PRAMAAN is designed to tell you whether the capture is genuine."
 
 **If a judge asks, "Isn't this Anchor?":**
-> "We respect Anchor, and it's closest to our location check. But location is one of our three signals. Our target is the media: recapture from a screen and reused photos, the cases the CAG documented. The output is a certificate that someone else can verify."
+> "We respect Anchor, and it's closest to our location check. But location is one of our three signals. Our target is the capture: recapture from a screen and photos of a different site, cases the CAG documented. Reused photos are addressed by camera-only capture, not by a check. The output is a certificate that someone else can verify."
 
 ## 7. Re-verify before the Finale
-- [ ] Re-read thread 169162 and any Team Nexus public post/LinkedIn about 1 week before 9 Oct (plan §12.4)
-- [ ] Update §1 and §5 if the description has changed
+- [x] Re-read thread 169162 on 2026-10-03: description, placing (1st Runner Up, Students bucket) and Wild Card entry (Grand Finale, Bengaluru, 9–11 Oct) unchanged, verbatim. Other Team Nexus posts (e.g. LinkedIn) not checked
+- [x] §1 and §5 need no update (description unchanged). Re-read once more on the day before the Finale

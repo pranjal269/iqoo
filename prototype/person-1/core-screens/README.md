@@ -32,8 +32,8 @@ The page opens on the clickable journey (`../clickable-prototype/`); "All screen
 
 ## Later phases
 
-Certificate detail (SC-08), the Verifier Desk concept (SC-10–SC-12) and linking were built in Phase 3 in `../clickable-prototype/`. Still not built: hand-over screen (SC-09), SC-04 V-TIMEOUT, retake / new capture and back / exit as product features.
+Certificate detail (SC-08), the Verifier Desk concept (SC-10–SC-12) and linking were built in Phase 3 in `../clickable-prototype/`; SC-09 Hand-over and SC-04 V-TIMEOUT followed on Day 3. Retake and product back / exit are not modelled by decision (HANDOFF Day 3 · Phase 1).
 
 ## Prototype boundary
 
-Presentation only (HANDOFF P1 Q5). No camera, microphone, location, motion-sensor, cryptography or network access; no detection, FFT, geofence, fusion, scoring or signing logic; no timers or animations standing in for processing. Every screen carries "Prototype interaction — simulated result", and every number carries "sample value, prototype interaction". This web prototype is a presentation surface; the event product is the Android app built during the event window.
+Presentation only (HANDOFF P1 Q5). No camera, microphone, location, motion-sensor, cryptography or network access; no detection, FFT, geofence, fusion, scoring or signing logic; no JS timers; the only animation (SC-06) is a CSS-only motion that does not stand for a measured processing time. Every screen carries "Prototype interaction — simulated result", and every number carries "sample value, prototype interaction". This web prototype is a presentation surface; the event product is the Android app built during the event window.

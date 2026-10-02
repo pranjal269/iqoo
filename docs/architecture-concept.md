@@ -74,7 +74,7 @@ on its own (PRD FR-5, FR-8).
   weighting rule when a check is LOW_CONFIDENCE — that rule is decided during the event
   build, not invented here (see `docs/event-boundary.md` §3, assumption T-3).
 - Status vocabulary used consistently across phone, certificate and Verifier Desk:
-  **PASS / FAIL / LOW_CONFIDENCE / UNAVAILABLE** (all four checks, all three components).
+  **PASS / FAIL / LOW_CONFIDENCE / UNAVAILABLE** (all four statuses, all three checks).
   This resolves Person 1's open item D-2: the PRD's certificate schema example shows
   `"status": "OK"`, which this concept treats as an inconsistency in that one example,
   not as a fourth status word.
@@ -97,9 +97,9 @@ on its own (PRD FR-5, FR-8).
   multi-user sync (PRD §3.2, §6.6, §9).
 - Why this matters for the fraud use case: the persona (PMAY field surveyor / ULB
   supervisor, PRD §2.3) works in the field and indoors, where connectivity is
-  unreliable; and an offline pipeline removes a whole class of "was this photo
-  intercepted or altered in transit" questions, keeping the trust chain entirely
-  on the two devices involved (phone, then laptop).
+  unreliable; an offline pipeline keeps the capture pipeline independent of network
+  connectivity. Tamper-evidence comes from signing (§5), not from being offline: the
+  certificate still travels from the phone to the laptop.
 - This is a **design requirement for the event build**, not something verified in this
   prototype — there is no running pipeline yet to test offline.
 

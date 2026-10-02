@@ -1,6 +1,6 @@
 // SC-08 Certificate (S8). Certificate detail showing every PRD §7 manifest field (complete since Phase 4),
 // for the result shown on SC-07. The full JSON-style manifest is prototype/person-2/certificate-mockup/.
-// Illustrative only: no key, hash or signature exists. "Share certificate" navigates to the Verifier Desk concept.
+// Illustrative only: no key, hash or signature exists. "Share certificate" navigates to SC-09 Hand-over (Day 3, D-8).
 import {
   PhoneFrame,
   ScreenTitle,
@@ -23,7 +23,7 @@ export default function SC08Certificate({ result, onShare }) {
     {
       title: 'Checks',
       fields: result.checks.flatMap((c) => [
-        [c.check, `${c.status}: ${c.reason}`],
+        [c.check, `${c.status}: ${c.reason}`, Boolean(c.hasSampleValue)],
         [`${c.check} score`, c.score ?? 'no score (UNAVAILABLE)', c.score !== null],
       ]),
     },
@@ -36,6 +36,8 @@ export default function SC08Certificate({ result, onShare }) {
         ['Device', SAMPLE_CAPTURE.device],
         ['Android version', SAMPLE_CAPTURE.androidVersion],
         ['Media', SAMPLE_CAPTURE.media],
+        // PRD §7 media.durationSeconds: the FR-1 capture length, shown as in the manifest mockup.
+        ['Media duration', `${SAMPLE_CAPTURE.durationSeconds} seconds`],
         ['Media hash', SAMPLE_CAPTURE.mediaHash],
       ],
     },

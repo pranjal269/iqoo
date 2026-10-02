@@ -10,10 +10,10 @@ Date: 2026-10-01 · Branch: `krishika`
 - **Phase 4:** technical and evidence package (`../../person-2/TECHNICAL-PACKAGE.md`, `../../person-3/problem-evidence/`); SC-08 now shows every PRD §7 field; evidence visuals consolidated into `prototype/person-2/evidence-visuals/`.
 
 ## Pending
-- Day 3 work only. Phase 5 (written package) and Phase 6 (integration, QA, freeze) are complete; see HANDOFF Day 2 · Phase 6.
-- Not built: SC-09 hand-over screen, SC-04 V-TIMEOUT, retake / back / exit as product features.
+- Day 2 complete (HANDOFF Day 2 · Phase 6). Day 3: SC-04 V-TIMEOUT, SC-09 Hand-over, stepped Verifier Desk, SC-06 checking transition and phone-width fit added (HANDOFF Day 3 entries).
+- Not modelled by decision: retake (D-9), product back / exit (P2-Q4).
 
 ## Decisions carried forward (HANDOFF Day 2 · Phase 1 and Phase 3 entries)
 - D-1, D-2 / T-11, D-3, D-4, D-6, D-7, D-10, P3-Q1, P4-F2 as locked in Phase 1
-- Phase 3: Verifier Desk shown in a laptop frame (D-5); its three stages shown together on one concept screen (P4-F1, P2-Q3, P2-Q5); certificate fields from PRD §7 (P3-Q2)
-- Still open: D-8 transfer mechanism; P2-Q2 hand-over screen; D-9 retake and P2-Q4 back / exit as product features (prototype-only controls stand in); P2-Q1 GPS-timeout variant
+- Phase 3: Verifier Desk shown in a laptop frame (D-5); one concept screen (P4-F1); from Day 3 its three stages are user-triggered: drop, verify, see evidence (P2-Q3, P2-Q5); certificate fields from PRD §7 (P3-Q2)
+- Closed on Day 3: D-8, P2-Q2, D-9, P2-Q4, P2-Q1 (HANDOFF Day 3 · Phase 1)

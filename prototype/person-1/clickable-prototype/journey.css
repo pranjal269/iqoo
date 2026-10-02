@@ -53,3 +53,55 @@
 /* View switch */
 .view-switch { display: flex; gap: var(--space-2); }
 .view-switch .proto-button[aria-pressed='true'] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+
+/* Day 3 · Phase 2 */
+/* SC-06: non-quantitative "in progress" motion (CSS only, no JS timer; not a measured time). */
+.checking-motion { display: flex; justify-content: center; gap: var(--space-2); padding: var(--space-2) 0; }
+.checking-motion span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--info);
+  opacity: 0.25;
+  animation: checking-pulse 1.2s ease-in-out infinite;
+}
+.checking-motion span:nth-child(2) { animation-delay: 0.2s; }
+.checking-motion span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes checking-pulse { 50% { opacity: 1; } }
+/* SC-06 prototype control: the sample-result choice appears after a brief simulated transition. */
+.proto-choice-reveal { animation: proto-reveal 0.4s ease-out 1.2s both; }
+@keyframes proto-reveal { from { opacity: 0; visibility: hidden; } to { opacity: 1; visibility: visible; } }
+@media (prefers-reduced-motion: reduce) {
+  .checking-motion span { animation: none; opacity: 0.6; }
+  .proto-choice-reveal { animation: none; }
+}
+
+/* SC-09 Hand-over */
+.handover-file {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  border: 1px dashed var(--ink-2);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+}
+.handover-file-name { font-weight: 700; }
+
+/* Verifier Desk stage 1: drop area */
+.vd-drop { border-style: dashed; border-color: var(--ink-2); align-items: flex-start; }
+.vd-table-wrap { min-width: 0; }
+
+/* Phone-width fit (Day 2 carry-forward): the laptop frame shrinks and its grids stack. */
+.journey-stage { min-width: 0; max-width: 100%; }
+.laptop-wrap { min-width: 0; max-width: 100%; }
+@media (max-width: 720px) {
+  .vd-stages, .vd-verdict, .vd-visuals { grid-template-columns: 1fr; }
+  .laptop-titlebar { flex-wrap: wrap; }
+  .laptop-body { padding: var(--space-3); }
+  /* Checks table: one stacked block per check, each cell labelled, so no column or sample label is hidden. */
+  .vd-checks thead { display: none; }
+  .vd-checks tr { display: block; padding: var(--space-2) 0; border-bottom: 1px solid var(--line); }
+  .vd-checks td { display: block; border: 0; padding: 2px 0; }
+  .vd-checks td::before { content: attr(data-label) ': '; font-size: var(--fs-micro); font-weight: 700; text-transform: uppercase; color: var(--ink-2); }
+  .vd-checks td.vd-check-name::before { content: none; }
+}

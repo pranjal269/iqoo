@@ -82,12 +82,12 @@ export default function ArchitectureDiagram() {
         </Stage>
       </div>
 
-      <Arrow label="Hand-over to the verifier's laptop (mechanism not decided, HANDOFF D-8)" />
+      <Arrow label="Hand-over: one certificate file, phone to laptop, no cloud service; transfer method chosen in the event build (D-8)" />
 
       <div className="arch-boundary arch-boundary-laptop">
         <p className="arch-boundary-label">Laptop</p>
         <Stage n="8" title="Verifier Desk">
-          Checks the signature, then shows the verdict band, Reality Score, each check's score and reason, and the
+          Opens the dropped certificate file, checks the signature, then shows the verdict band, Reality Score, each check's score and reason, and the
           evidence: FFT magnitude plot, gyro vs optical-flow trace, geofence distance (PRD FR-7).
         </Stage>
       </div>
@@ -102,10 +102,11 @@ export default function ArchitectureDiagram() {
         </thead>
         <tbody>
           <tr><td>Capture, signals</td><td>Screens with a camera placeholder; no camera or sensor access</td><td>Real 3-second clip, gyroscope and GPS on the loaner iQOO 15</td></tr>
-          <tr><td>Three checks</td><td>Named on screen; no check runs</td><td>Real motion, geofence and moiré checks written during the event</td></tr>
+          <tr><td>Three checks</td><td>Named on screen; no check runs</td><td>Real Motion Consistency, Geofence / Location Binding and FFT-based Moiré / Recapture Detection, written during the event</td></tr>
           <tr><td>Fusion, verdict</td><td>Hardcoded sample results, chosen by the reviewer</td><td>Real fixed-rule fusion, tuned during the event</td></tr>
           <tr><td>Certificate, signing</td><td>Illustrative certificate; no key, hash or signature</td><td>Real app-level signing with Android Keystore</td></tr>
-          <tr><td>Verifier Desk</td><td>Concept screen; nothing is opened or verified</td><td>Real laptop app that verifies the signature and shows the evidence</td></tr>
+          <tr><td>Hand-over</td><td>SC-09 screen; nothing is sent</td><td>Offline file transfer to the laptop; method chosen in the event build</td></tr>
+          <tr><td>Verifier Desk</td><td>Concept screen (drop certificate, verify, see evidence); nothing is opened or verified</td><td>Real laptop app that verifies the signature and shows the evidence</td></tr>
         </tbody>
       </table>
     </section>

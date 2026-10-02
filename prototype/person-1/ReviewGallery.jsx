@@ -7,6 +7,7 @@ import SC05Capturing from './core-screens/SC05Capturing.jsx';
 import SC06Checking from './core-screens/SC06Checking.jsx';
 import SC07Result from './core-screens/SC07Result.jsx';
 import SC08Certificate from './clickable-prototype/SC08Certificate.jsx';
+import SC09HandOver from './clickable-prototype/SC09HandOver.jsx';
 import VerifierDesk from './clickable-prototype/VerifierDesk.jsx';
 import { SAMPLE_RESULTS, SAMPLE_SITE } from './core-screens/fixtures.js';
 import {
@@ -34,6 +35,7 @@ export default function ReviewGallery() {
           <SC02Calibration />
           <SC03CapturePreparation />
           <SC04ReadyToCapture />
+          <SC04ReadyToCapture timeout />
           <SC05Capturing />
           <SC06Checking />
           <SC07Result variantId="V-LG" result={SAMPLE_RESULTS.likelyGenuine} />
@@ -43,9 +45,11 @@ export default function ReviewGallery() {
       </section>
 
       <section>
-        <h2 className="gallery-section">Certificate (SC-08) and Verifier Desk concept (SC-10–SC-12), Likely Genuine sample</h2>
+        <h2 className="gallery-section">Certificate (SC-08), Hand-over (SC-09) and Verifier Desk concept (SC-10–SC-12), Likely Genuine sample</h2>
         <div className="gallery-grid">
           <SC08Certificate result={SAMPLE_RESULTS.likelyGenuine} />
+          <SC09HandOver result={SAMPLE_RESULTS.likelyGenuine} />
+          <VerifierDesk result={SAMPLE_RESULTS.likelyGenuine} stage="drop" />
           <VerifierDesk result={SAMPLE_RESULTS.likelyGenuine} />
         </div>
       </section>

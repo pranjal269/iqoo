@@ -81,3 +81,45 @@ Short, dated record of what was integrated each day. Written by that day's integ
 - [x] HANDOFF.md / CHANGELOG.md current
 
 **Rule-compliance check (Day 2 · Phase 6):** A1–A7 ✅ (presentation-only code; no detection, scoring, signing, sensor, Android or backend code; no key generated) · B1–B4 ✅ (all five stamps rendered; claim audit logged) · C1–C4 ✅ · D1–D3 ✅ · E1 n/a (one owner executes all lanes, HANDOFF Day 2 · Phase 1) · E2 ✅ (`assets/` untouched) · E3 ✅
+
+## 2026-10-03 — Day 3 (integrator: Krishika, all lanes)
+
+**Phase 1 · Carry-forward closure & Day 3 lock**
+- 7 Day 1 claim-audit violations and `event-boundary.md` B-4 fixed; Anchor public description re-checked (unchanged)
+- Filed `docs/state-map.md`, `docs/ux-requirements.md`; Day 1 P1 cleanup resolved there (`day-1/` unchanged)
+- Decided D-8, P2-Q2, D-9, P2-Q4, P2-Q1, P2-Q3 / P2-Q5 and the checking transition (HANDOFF Day 3 · Phase 1)
+
+**Phase 2 · Clickable prototype**
+- Added SC-04 V-TIMEOUT (GPS-timeout path from SC-03), SC-09 Hand-over, stepped Verifier Desk (SC-10 drop → SC-11 verify → SC-12 see evidence)
+- SC-06: CSS-only checking motion; sample-result choice appears after a brief CSS transition, labelled "not a measured processing time" (no JS timer)
+- Phone-width fit: laptop frame shrinks, Verifier Desk grids stack, checks table becomes labelled blocks
+
+**Phase 3 · Certificate + Verifier Desk + technical consistency**
+- Architecture diagram hand-over arrow and table match D-8; canonical check names in the event column
+- Prototype READMEs and STATUS brought up to the Day 3 state
+
+**Phase 4 · Technical walkthrough & validation**
+- `prototype/person-2/technical-explainer/technical-explainer.md` (241 words + screen mapping)
+- `prototype/person-2/validation-plan/validation-plan.md` (template with empty result fields + known-risks slide from PRD §12)
+
+**Phase 5 · Claim audit, traceability, submission**
+- `docs/traceability-matrix.md` (draft), `docs/video-script.md` (skeleton), `docs/submission-draft.md` (Prototype URL placeholder + what it will link to), `docs/claim-audit-log.md` (Day 3 rows; zero open violations)
+
+**Phase 6 · Integration & exit audit**
+- Headless Chrome on the dev server, 1440 px and 390 px: all three branches end to end (one through the GPS-timeout path), Back through all 13 steps, Restart, all three views; no failed clicks, console errors, external requests, overflow or unstamped screens
+
+**Day 3 exit gate**
+- [x] Clickable prototype covers the full journey including certificate detail + Verifier Desk concept, no dead ends
+- [x] Technical explainer + validation-plan + risk slide complete and consistent with the prototype
+- [x] Claim-audit pass complete with zero open violations
+- [x] Traceability matrix drafted (not yet final)
+
+**Rule-compliance check (Day 3):** A1–A7 ✅ (no detection, scoring, signing, sensor, file-input, timer, network or Android code; dependencies unchanged) · B1–B4 ✅ · C1–C4 ✅ · D1–D3 ✅ · E2 ✅ · E3 ✅
+
+**Separate phase audits (2026-10-03, one brief per phase, existing work audited, not rebuilt)**
+- P1: B-4 wording corrected; verdict bands and statuses named in `docs/ux-requirements.md`
+- P2: prototype-controls note no longer says "no timers" (it contradicted the SC-06 pause)
+- P3: SC-08 gains the PRD §7 media duration field; sample labels added to reason numbers on SC-08, SC-12 and the manifest mockup
+- P4: explainer states prototype vs event build and uses "will"; validation plan gains an evidence column, and unfixable limits are split from risks "addressed live"
+- P5: present tense fixed in the submission draft; brief core line and judge answer corrected; video script reordered to the story; story-level traceability rows; every citation checked
+- P6: full journey at 1440 px and 390 px (all three branches, plus all three through the GPS-timeout path); one terminology fix in the submission draft; Day 3 records corrected; every carry-forward given a disposition (`docs/day-3-handoff.md` §4)

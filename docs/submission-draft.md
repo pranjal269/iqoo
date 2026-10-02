@@ -15,8 +15,8 @@
 | What makes you stand out | 6 | Ready |
 | Prior builds & hackathons | 10b | **[TEAM INPUT]** HANDOFF Q3 |
 | Android / LLM proficiency | — | **[TEAM INPUT]** not covered by any project document |
-| Prototype URL | 8 | **[OPEN]** the prototype runs locally; no public URL exists yet |
-| Video Walkthrough URL | — | Day 3–4 work (not started) |
+| Prototype URL | 8 | **[OPEN]** placeholder below; the prototype runs locally; hosting not decided (Day 4–5) |
+| Video Walkthrough URL | — | Script skeleton in `docs/video-script.md` (Day 3); recording is Day 4 work (not started) |
 | Deck / Document upload | 1–13 feed the deck | Day 4 work (not started) |
 | Confirmation checkbox (original work) | 10 | Answer truthfully, with the disclosure in 10 (rule-compliance, Day 5 checks) |
 
@@ -37,13 +37,13 @@ India's welfare schemes rely on geo-tagged photographs as proof of physical work
 
 ## 4. Solution description
 
-PRAMAAN is designed to check a capture at the moment it is taken, on the phone, before it reaches any upload or review pipeline (PRD §14.3). The surveyor records a 3-second clip with the phone camera only; there is no gallery upload. PRAMAAN is designed to run three checks on it:
+PRAMAAN is designed to check a capture at the moment it is taken, on the phone, before it reaches any upload or review pipeline (PRD §14.3). The surveyor will record a 3-second clip with the phone camera only; there is no gallery upload. PRAMAAN is designed to run three checks on it:
 
 - **Motion Consistency:** does the phone's own movement, from the gyroscope, match the movement seen in the clip?
 - **Geofence / Location Binding:** how far is the capture from the claimed registered site?
 - **FFT-based Moiré / Recapture Detection:** does the clip's frequency pattern look like a real scene or a filmed screen?
 
-In the proposed verification model, a fixed, explainable rule combines the available checks into one **Reality Score** and a verdict band: **Likely Genuine**, **Needs Review** or **Likely Fraudulent**. No single check is meant to decide the verdict, and every check is designed to give a human-readable reason. The result will be sealed in a **Certificate** with app-level signing, not hardware-attested. A supervisor will open it on the laptop **Verifier Desk**, designed to check the signature and show the evidence behind the score. The whole capture pipeline is designed to run offline.
+In the proposed verification model, a fixed, explainable rule will combine the available checks into one **Reality Score** and a verdict band: **Likely Genuine**, **Needs Review** or **Likely Fraudulent**. No single check is meant to decide the verdict, and every check is designed to give a human-readable reason. The result will be sealed in a **Certificate** with app-level signing, not hardware-attested. A supervisor will open it on the laptop **Verifier Desk**, designed to check the signature and show the evidence behind the score. The whole capture pipeline is designed to run offline.
 
 PRAMAAN proves capture authenticity, not scene truthfulness.
 
@@ -51,10 +51,10 @@ PRAMAAN proves capture authenticity, not scene truthfulness.
 
 1. **Capture:** 3-second clip, camera-only, with a live GPS accuracy indicator and a "slowly move the phone left-to-right" prompt.
 2. **Signals:** video frames, a gyroscope log and one GPS fix with its accuracy.
-3. **Three checks:** Motion Consistency, Geofence / Location Binding, FFT-based Moiré / Recapture Detection. Each reports PASS, FAIL, LOW_CONFIDENCE or UNAVAILABLE with a reason; uncertainty is not treated as fraud, and a check that cannot run is left out.
-4. **Fusion:** one fixed, explainable rule turns the available checks into a Reality Score and verdict band. Deterministic signal processing, no trained model.
+3. **Three checks:** Motion Consistency, Geofence / Location Binding, FFT-based Moiré / Recapture Detection. Each will report PASS, FAIL, LOW_CONFIDENCE or UNAVAILABLE with a reason; uncertainty will not be treated as fraud, and a check that cannot run will be left out.
+4. **Fusion:** one fixed, explainable rule will turn the available checks into a Reality Score and verdict band. Deterministic signal processing, no trained model.
 5. **Certificate:** manifest (capture ID, time, device, location, distance, per-check scores and reasons, Reality Score, verdict) plus signature, public key and media, in one file.
-6. **Verifier Desk (laptop):** checks the signature, then shows the verdict, each check's reason and the evidence: FFT magnitude plot, gyro vs optical-flow trace, geofence distance.
+6. **Verifier Desk (laptop):** will check the signature, then show the verdict, each check's reason and the evidence: FFT magnitude plot, gyro vs optical-flow trace, geofence distance.
 
 ## 6. What makes you stand out
 
@@ -70,26 +70,28 @@ Offline, on-device trust tools for location already exist; at the Bengaluru City
 
 A clickable, phone-first **web prototype** (React + Vite, presentation only) that:
 
-- walks through the surveyor journey: App Open → Hold-Still Calibration → Capture Preparation → Ready to Capture → Capturing → Checking → Result → Certificate → Verifier Desk concept;
+- walks through the surveyor journey: App Open → Hold-Still Calibration → Capture Preparation → Ready to Capture (including a GPS-timeout variant) → Capturing → Checking → Result → Certificate → Hand-over → Verifier Desk concept (drop certificate → verify → see evidence);
 - shows all three verdict bands, chosen by the reviewer from hardcoded sample results;
 - shows an illustrative certificate with every PRD §7 field, and a Verifier Desk concept screen with conceptual evidence visuals;
-- includes a technical package: the proposed architecture, what each check is designed to compare, the certificate manifest, and the problem evidence.
+- includes a technical package: the proposed architecture, what each check is designed to compare, the certificate manifest, and the problem evidence; a written technical explainer and validation-plan template sit alongside it (`prototype/person-2/technical-explainer/`, `prototype/person-2/validation-plan/`).
 
 It **does not** capture, sense, detect, score, sign or verify anything. Every screen is stamped "Prototype interaction — simulated result", every number "sample value, prototype interaction", every technical visual "Conceptual illustration, not measured data", the architecture "Proposed implementation for the event", and the certificate "Illustrative — not a real signed output".
 
-**Prototype URL:** [OPEN] the prototype currently runs locally (`prototype/person-1`, `npm run dev`); hosting a public link is still to be decided.
+**Prototype URL:** `[PROTOTYPE URL — to be added on Day 4–5]`
+
+What the link will point to: a public, read-only copy of this same presentation-only web prototype (the `prototype/person-1` build), opening on the **Clickable journey** with the "Prototype interaction — simulated result" stamp visible on the first screen (rule-compliance Day 5 check), plus the "All screens and components" and "Technical and evidence package" views. It will not point to any working detection, scoring, signing or verification software, because none exists before the event. Today the prototype runs locally only (`prototype/person-1`, `npm run dev`); where to host it is not decided.
 
 ## 9. Event implementation roadmap (proposed, from PRD §11)
 
 - **Red Light (phone only):** geofence check first (GPS, distance, PASS / FAIL / LOW_CONFIDENCE) → Motion Consistency (gyroscope logging, optical flow, calibration) → FFT-based Moiré / Recapture Detection → fusion and app-level signing → integration and per-check fault isolation.
-- **Green Light (phone + laptop):** tune the moiré baseline against real clips filmed at the venue → build the Verifier Desk → rehearse the demo, including a screen-recapture case and a wrong-location case.
+- **Green Light (phone + laptop):** tune the FFT-based Moiré / Recapture Detection baseline against real clips filmed at the venue → build the Verifier Desk → rehearse the demo, including a screen-recapture case and a wrong-location case.
 - Measurements are taken during the event, not before. The PRD's defaults for the geofence distance and the fusion weights are confirmed or tuned against real captures at the event (PRD FR-2, FR-5, §13.3).
 
 ## 10. Originality / prior-build explanation
 
 **Built before the event (idea-screening prototype):** the product concept and PRD; the UX journey, state and screen specification; a presentation-only clickable web prototype; the proposed architecture and event-boundary matrix; conceptual evidence visuals; an illustrative certificate; problem and evidence research; this written package.
 
-**Built during the event window (phone app on the loaner iQOO 15; Verifier Desk on a laptop):** the Android app (Kotlin / Jetpack Compose, PRD §8.2); real camera capture; real GPS reading and location binding; real motion-signal collection; real FFT / recapture detection; real fusion and Reality Score; real certificate signing (Android Keystore); the real Verifier Desk; all testing and measurement.
+**Built during the event window (phone app on the loaner iQOO 15; Verifier Desk on a laptop):** the Android app (Kotlin / Jetpack Compose, PRD §8.2); real camera capture; real GPS reading and Geofence / Location Binding; real motion-signal collection; real FFT-based Moiré / Recapture Detection; real fusion and Reality Score; real certificate signing (Android Keystore); the real Verifier Desk; all testing and measurement.
 
 **Disclosure:** the web prototype is code written before the event, but it is a presentation surface only, with no detection, scoring, camera, sensor, location, signing or verification logic. None of it is carried into the event build, which is a separate Android app written inside the event window. Open-source libraries (React, Vite) are listed with licences in `docs/attributions.md`.
 
@@ -100,7 +102,7 @@ It **does not** capture, sense, detect, score, sign or verify anything. Every sc
 ## 11. Competitive positioning
 
 - **What is known (public source only):** Team Nexus's Anchor, 1st Runner-Up in the Students bucket at the Bengaluru City Battle, with a Wild Card entry to the Grand Finale. Its public description: it "verifies whether your phone's location can be trusted by cross-checking GNSS with physical sensors and on-device AI, even without internet connectivity" (iQOO Community recap, thread 169162).
-- **Honest overlap:** Anchor, as publicly described, and PRAMAAN, as designed, are both offline, on-device and sensor-based, and both use GNSS. Location binding is where they overlap most.
+- **Honest overlap:** Anchor, as publicly described, and PRAMAAN, as designed, are both offline, on-device and sensor-based, and both use GNSS. Geofence / Location Binding is where they overlap most.
 - **PRAMAAN's proposed focus:** the captured media, not the device's position. Location is one of three fused checks; the output is a certificate a second party can check.
 - **Framing:** layers, not rivals. Location trust is necessary but not sufficient for photo evidence.
 - **Not known, and not claimed:** Anchor's model, sensors, accuracy or UI; whether it inspects media or issues certificates; how it will have changed by the Finale. Re-check the public description before 9 October.
@@ -111,7 +113,7 @@ It **does not** capture, sense, detect, score, sign or verify anything. Every sc
 - GPS spoofing with a mock-location app is a known gap; the proposed v2 mitigation is a Wi-Fi / cell-tower cross-check (PRD §12.3).
 - Reusing an earlier genuine capture of the same site is outside what a single capture check can see; camera-only capture raises the bar but does not detect it (PRD §5).
 - App-level signing, not hardware-attested: a rooted or modified device can bypass app-level protections; hardware attestation is roadmap only (PRD §8.4, §10.4).
-- The moiré check will be tuned against specific screens at the venue; the screens used for tuning will be listed, with no claim of general validity (PRD FR-4).
+- FFT-based Moiré / Recapture Detection will be tuned against specific screens at the venue; the screens used for tuning will be listed, with no claim of general validity (PRD FR-4).
 - Indoors, GPS can be slow or imprecise, so the geofence check carries a risk of wrong results there; this is stated, not hidden (PRD §12.1 row 3, §14.4).
 - Textureless scenes or poor GPS are designed to give LOW_CONFIDENCE rather than a firm answer (PRD FR-2, FR-3).
 - The event build will use a few hardcoded demo sites, not a real site-registration system (PRD §6.2.1).

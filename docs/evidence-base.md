@@ -77,6 +77,6 @@ The plan (§3, §12.2) refers to a CAG ₹0.97-crore duplication finding "source
 
 ## Pitch-ready one-liners (claim-audited)
 
-- "In Odisha this July, Vigilance arrested two MGNREGS engineers over an alleged ₹42-lakh fraud. The mandatory geotagged site photos, the payment gate, were never taken." (E1)
+- "In Odisha this July, Vigilance arrested two MGNREGS engineers over an alleged ₹42-lakh fraud. According to OmmCom News, the mandatory geo-tagging of the sites, the payment gate, was never done." (E1; allegation. Day 3: aligned with `docs/evidence-narrative.md`)
 - "In its 2025 audit of MGNREGS in Karnataka, the CAG found geotagged photos that were 'captured from existing photograph[s]', photos of a different shed, and the same photo reused across work stages, all used to release payments." (E2)
 - "The photo is the proof of work. Today, nothing proves the photo." (framing, no numeric claim)

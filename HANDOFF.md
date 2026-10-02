@@ -301,3 +301,60 @@ SC-01 and SC-04 are separate screens; the Plan's "ready/idle" is SC-04.
 **Next dependency:** → Day 3 (Plan Day 3): fix the logged violations first, then the Day 3 lanes.
 
 **Day 2 final audit and handoff (2026-10-03):** PASS WITH CARRY-FORWARD. Next-session reference: `docs/day-2-handoff.md` (Day 2 state, Day 1 carry-forwards resolved vs deferred, Day 3 starting points). The audit found two items not previously recorded: the stale `docs/event-boundary.md` B-4 row and the due Anchor re-verification (brief section 7).
+
+---
+
+### 2026-10-03 · Day 3 · Phase 1 (Carry-forward closure & Day 3 lock) · Krishika (all lanes)
+
+**Completed**
+- 7 logged Day 1 claim-audit violations fixed in the source files (`architecture-concept.md` §4, §6; `event-boundary.md` T-10; `anchor-positioning-brief.md` §6 a–c; `evidence-base.md` line 80) and `event-boundary.md` B-4 corrected. Log rows marked FIXED (`docs/claim-audit-log.md`).
+- Anchor re-check (brief §7): thread 169162 re-read 2026-10-03; description, placing and Wild Card entry unchanged, verbatim. Other Team Nexus posts not checked.
+- `docs/state-map.md` and `docs/ux-requirements.md` filed (Plan Day 1 files), canonical from Day 3. The three Day 1 P1 cleanup items are resolved there; `day-1/` stays unchanged (Day 2 Phase 1 boundary).
+- Terminology: canonical check names applied in active prose (`anchor-positioning-brief.md`, `submission-draft.md`, `event-boundary.md` T-7).
+
+**Changed files:** `docs/architecture-concept.md`, `docs/event-boundary.md`, `docs/anchor-positioning-brief.md`, `docs/evidence-base.md`, `docs/submission-draft.md`, `docs/claim-audit-log.md`, new `docs/state-map.md`, new `docs/ux-requirements.md`, this file.
+
+**Decisions (Day 3 product decisions; detail in `docs/state-map.md` §3)**
+
+| ID | Decision | Source basis |
+|---|---|---|
+| D-8 Certificate → laptop | One certificate file, moved phone → laptop without a cloud service; transfer method chosen in the event build (not specified by the PRD) | PRD FR-6, FR-7, §3.2 |
+| P2-Q2 Hand-over | Visible phone screen SC-09; it sends nothing in the prototype | Day 1 S9; Plan §3 "view/share" |
+| D-9 Retake | Not modelled: the PRD defines no retake | Day 1 G9 |
+| P2-Q4 Back / Exit | Product journey forward-only; Back and Restart stay prototype-only reviewer controls | Day 1 G9; no source for backward transitions |
+| P2-Q1 GPS timeout | SC-04 V-TIMEOUT: best-available fix, limited accuracy stated on screen and in result reasons; capture allowed. No timeout duration shown | PRD FR-2, §12.1 row 3 |
+| P2-Q3 / P2-Q5 Verifier Desk | One concept screen, three user-triggered stages: Drop certificate → Verify → See evidence. **Supersedes** the Day 2 Phase 3 "stages shown together, no empty state" choice | Plan §3, Day 3 P1 step 3 |
+| Checking transition | SC-06 shows a non-quantitative CSS motion; the sample-result choice appears after a brief CSS fade. No JS timer, number, countdown or progress; labelled "not a measured processing time". Narrow exception to "no timers" (D-10 / P1 Q5), required by Plan Day 3 P1 step 4 | Plan Day 3 P1 step 4 |
+| Screen IDs | Locked IDs kept. Plan "idle → capture → checking → verified/flagged → certificate detail" maps to SC-01–SC-04 → SC-05 → SC-06 → SC-07 (three bands) → SC-08 | HANDOFF terminology lock |
+
+**Team inputs (checked 2026-10-03; teammate branches unchanged since Day 1):** Q1 E3 source, Q2 UNI link, Q3 prior builds, Q4 submission cutoff, Android / LLM proficiency: **all still pending, not invented.**
+
+**Blockers:** none.
+
+**Next dependency:** → Phase 2: implement SC-04 V-TIMEOUT, SC-09, the stepped Verifier Desk, the checking transition and phone-width fit.
+
+---
+
+### 2026-10-03 · Day 3 · Phases 2–6 (Clickable prototype, technical package, claim audit, exit audit) · Krishika (all lanes) — **Day 3 complete**
+
+**Completed:** SC-04 V-TIMEOUT, SC-09 Hand-over, stepped Verifier Desk (drop → verify → see evidence), SC-06 checking transition, phone-width fit; architecture and prototype docs aligned with the Day 3 decisions; technical explainer and validation-plan template + risk slide (`prototype/person-2/technical-explainer/`, `validation-plan/`); traceability matrix draft, video-script skeleton, submission-draft Prototype URL placeholder, claim-audit Day 3 rows. Exit audit: all three branches at 1440 px and 390 px, no failures; zero open claim violations; no prohibited implementation.
+
+**Changed files:** see `CHANGELOG.md` (Day 3) and `docs/day-3-handoff.md` §5.
+
+**Decision recorded:** the Verifier Desk at narrow widths shows the checks table as labelled blocks (no hidden column or sample label).
+
+**Blockers:** none. **Team inputs:** unchanged, all pending.
+
+**Day 3 handoff:** `docs/day-3-handoff.md` is the reference for the next session (prototype state, technical package, claim / traceability status, carry-forwards, Day 4 starting point). No Day 4 work has started.
+
+**Day 3 · Phase 1 re-audit (2026-10-03, separate Phase 1 brief):** all Phase 1 items re-verified. Two small corrections: `docs/event-boundary.md` B-4 no longer says the weights are listed "only in `architecture-concept.md` §4" (T-2 / T-4 list them too); `docs/ux-requirements.md` G3 now names the verdict bands and the four check statuses explicitly. Anchor thread 169162 re-read again: unchanged. Team inputs Q1–Q4 and Android / LLM proficiency: still pending.
+
+---
+
+### 2026-10-03 · Day 3 · Phase 6 final integration audit · Krishika (all lanes) — **Day 3 ready to freeze**
+
+Run after separate Phase 1–5 audits (each audited the existing work and fixed only genuine gaps; see `CHANGELOG.md` Day 3 and `docs/claim-audit-log.md`).
+- Full journey in headless Chrome at 1440 px and 390 px: all three branches through SC-12, and all three again through SC-04 V-TIMEOUT. No failed clicks, dead ends, console errors, external requests, URL changes, layout issues or unstamped screens.
+- Fixes this phase: `docs/submission-draft.md` "location binding" → "Geofence / Location Binding"; `docs/day-3-handoff.md` and `CHANGELOG.md` brought up to the audited state (explainer word count, video-script order, Day 4 / Day 5 items checked against the Plan).
+- Every carry-forward now has one disposition: CLOSED, DAY 4, DAY 5 or WAITING FOR TEAM INPUT (`docs/day-3-handoff.md` §4). Cosmetic, Day 5 UX QA: on SC-08 at desktop width the "Geofence / Location Binding" label wraps with "/" alone on a line.
+- Zero open claim violations. No prohibited implementation. Dependencies unchanged. `main` untouched.

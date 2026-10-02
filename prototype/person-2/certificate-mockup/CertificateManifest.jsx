@@ -12,7 +12,7 @@ export default function CertificateManifest({ result }) {
     [2, `${q(key)}: {`],
     [3, `"score": ${c.score ?? 'null'},`, c.score !== null],
     [3, `"status": ${q(c.status)},`],
-    [3, `"reason": ${q(c.reason)}`],
+    [3, `"reason": ${q(c.reason)}`, Boolean(c.hasSampleValue)],
     [2, last ? '}' : '},'],
   ];
 
