@@ -299,3 +299,5 @@ SC-01 and SC-04 are separate screens; the Plan's "ready/idle" is SC-04.
 **Statement:** no Day 3 implementation has started. Nothing was built beyond Phases 1–6.
 
 **Next dependency:** → Day 3 (Plan Day 3): fix the logged violations first, then the Day 3 lanes.
+
+**Day 2 final audit and handoff (2026-10-03):** PASS WITH CARRY-FORWARD. Next-session reference: `docs/day-2-handoff.md` (Day 2 state, Day 1 carry-forwards resolved vs deferred, Day 3 starting points). The audit found two items not previously recorded: the stale `docs/event-boundary.md` B-4 row and the due Anchor re-verification (brief section 7).
