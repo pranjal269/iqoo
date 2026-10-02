@@ -358,3 +358,24 @@ Run after separate Phase 1–5 audits (each audited the existing work and fixed 
 - Fixes this phase: `docs/submission-draft.md` "location binding" → "Geofence / Location Binding"; `docs/day-3-handoff.md` and `CHANGELOG.md` brought up to the audited state (explainer word count, video-script order, Day 4 / Day 5 items checked against the Plan).
 - Every carry-forward now has one disposition: CLOSED, DAY 4, DAY 5 or WAITING FOR TEAM INPUT (`docs/day-3-handoff.md` §4). Cosmetic, Day 5 UX QA: on SC-08 at desktop width the "Geofence / Location Binding" label wraps with "/" alone on a line.
 - Zero open claim violations. No prohibited implementation. Dependencies unchanged. `main` untouched.
+
+---
+
+### 2026-10-03 · Day 4 · Phase 1 (Entry, inventory & review lock) · Krishika (all lanes)
+
+**Completed**
+- Day 3 exit state re-verified (build; full journey at 1440 px and 390 px, no failures; boundary scan clean) and committed as `87c20f8` on `krishika` (local; not pushed). `main` unchanged at `35639af`.
+- Stray empty root `package-lock.json` (created by `npm install` run in the repo root; the app's `package.json` is in `prototype/person-1/`) deleted, not committed.
+- Day 4 baseline register filed: `docs/day-4-register.md` (artifact classification, 16 Day 4 tasks with owner / destination / validation, Day 5 deferrals, 9 team inputs).
+
+**Decisions**
+
+| Decision | Resolution |
+|---|---|
+| Screenshots in git | `prototype/person-1/screenshots-final/` is the only place PNG files may be committed (Plan Day 4 P1 deliverable). Screenshots show the phone frame only, without prototype controls |
+| Event-implementation map location | `prototype/person-2/roadmap/`, with the roadmap (the Plan names only the reviewer-walkthrough and roadmap folders) |
+| Human-dependent steps | Blind test (reviewer), video narration, team fields and the form's actual field list are reported as waiting, never as done |
+
+**Team inputs (pending, not invented):** Q3 prior builds · Android and LLM proficiency · Q1, Q2, Q4 · Prototype URL hosting · the platform's field list and character limits · Office Kit section · blind-test reviewer(s) · video narration voice.
+
+**Blockers:** none for Phase 3. Phase 2's blind test needs a reviewer outside the team.
