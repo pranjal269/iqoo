@@ -95,6 +95,9 @@
 .journey-stage { min-width: 0; max-width: 100%; }
 .laptop-wrap { min-width: 0; max-width: 100%; }
 @media (max-width: 720px) {
+  /* Day 4 P2-B pre-review (internal UX audit, HIGH): at phone width the controls wrapped below the phone frame, so
+     screens without an in-screen button (e.g. SC-01) showed no visible way forward. Controls now sit above the frame. */
+  .journey .proto-controls { order: -1; width: 100%; }
   .vd-stages, .vd-verdict, .vd-visuals { grid-template-columns: 1fr; }
   .laptop-titlebar { flex-wrap: wrap; }
   .laptop-body { padding: var(--space-3); }

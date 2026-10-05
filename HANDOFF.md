@@ -374,8 +374,18 @@ Run after separate Phase 1–5 audits (each audited the existing work and fixed 
 |---|---|
 | Screenshots in git | `prototype/person-1/screenshots-final/` is the only place PNG files may be committed (Plan Day 4 P1 deliverable). Screenshots show the phone frame only, without prototype controls |
 | Event-implementation map location | `prototype/person-2/roadmap/`, with the roadmap (the Plan names only the reviewer-walkthrough and roadmap folders) |
-| Human-dependent steps | Blind test (reviewer), video narration, team fields and the form's actual field list are reported as waiting, never as done |
+| Human-dependent steps | Blind test (reviewer), video narration, team fields and the form's actual field list are reported as waiting, never as done *(Historical — superseded by internal blind-review simulation.)* |
 
-**Team inputs (pending, not invented):** Q3 prior builds · Android and LLM proficiency · Q1, Q2, Q4 · Prototype URL hosting · the platform's field list and character limits · Office Kit section · blind-test reviewer(s) · video narration voice.
+**Team inputs (pending, not invented):** Q3 prior builds · Android and LLM proficiency · Q1, Q2, Q4 · Prototype URL hosting · the platform's field list and character limits · Office Kit section · ~~blind-test reviewer(s)~~ *(Historical — superseded by internal blind-review simulation.)* · video narration voice.
 
-**Blockers:** none for Phase 3. Phase 2's blind test needs a reviewer outside the team.
+**Blockers:** none for Phase 3. Phase 2's blind test needs a reviewer outside the team. *(Historical — superseded by internal blind-review simulation.)*
+
+### 2026-10-03/04 · Day 4 P2–P6 and Day 5 final QA · Krishika (all lanes)
+
+**Validation strategy change (owner decision):** the Plan's external blind test was not conducted. External human review was not conducted. Validation uses an internal blind-review simulation, automated regression, viewport testing, visual inspection, and cross-asset claim auditing. Earlier entries that mention a blind-test reviewer are kept as written history.
+
+- P2-B VALIDATION: COMPLETE — INTERNAL BLIND-REVIEW SIMULATION (`docs/blind-test-notes.md`: 7 PASS · 2 CONFUSING · 0 BLOCKED). P2-C HARDENING: COMPLETE.
+- Prototype changes (CSS only): F1, the prototype controls sit above the frame at ≤ 720 px; F2, the certificate label min-width (SC-08 "/" wrap).
+- Phases 3–6 complete; Phase 4 complete subject only to real submission inputs (video, Prototype URL, team fields). Register: `docs/day-4-register.md` §0. Day 5 QA: `docs/day-5-final-qa.md`.
+- `EVENT-START-HANDOFF.md` written (no code); final submission checklist in `docs/day-5-final-qa.md` §4.
+- Final package not ready for submission: TI-1–3, TI-5, TI-6, TI-9, freeze commit. Nothing committed or pushed.

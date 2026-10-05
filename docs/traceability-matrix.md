@@ -1,6 +1,6 @@
 # Traceability Matrix — PRAMAAN prototype → PRD → event build
 
-**Owner:** Person 3 lane (Krishika, all lanes) · **Created:** 2026-10-03 (Day 3 · Phase 5) · **Status:** DRAFT (Plan Day 3 exit gate: "drafted, not yet final"; finalised Day 4)
+**Owner:** Person 3 lane (Krishika, all lanes) · **Created:** 2026-10-03 (Day 3 · Phase 5) · **Status:** DRAFT, updated Day 4 · Phase 5 with the Day 4 assets (§4). Still a draft (register T14) until the Day 5 freeze
 **Format (Plan Day 3 P3 step 2):** prototype element → source basis → prototype treatment → event treatment.
 **Playbook rules** (`docs/rule-compliance-checklist.md`): R1 original work in the event window · R2 open-source with attribution · R3 organisers may verify the build window · R4 no unfair practice · R5 phone-first, runs on the phone · R6 local / open-source model earns points (Office Kit).
 P1's Day 1 screen-to-requirement list (`prototype/person-1/day-1/traceability-matrix.md`) is a separate, earlier document; this matrix covers every element as built by the end of Day 3.
@@ -32,7 +32,7 @@ P1's Day 1 screen-to-requirement list (`prototype/person-1/day-1/traceability-ma
 | SC-10 Drop certificate | PRD FR-7; Plan §3 "drop certificate"; P2-Q5 | Drop area with no file input; "Open sample certificate" | Laptop app accepts a dropped / opened certificate file |
 | SC-11 Verify | PRD FR-7 (signature check); Plan §3 "verify"; P2-Q3 | "Signature valid" labelled an illustrative result; states no signature exists | Real signature verification against the bundled public key |
 | SC-12 See evidence | PRD FR-7 (score, bands, per-check reasons, FFT plot, gyro-vs-flow trace, geofence distance) | Labelled samples; three concept visuals stamped "Conceptual illustration, not measured data"; limitation line | Real evidence rendered from the certificate |
-| Prototype controls (Continue, sample-result choice, Back, Restart) | HANDOFF Day 2 Phase 3; Day 3 P2-Q4, D-9; R3 | Outside the phone frame, labelled "not part of the product"; Back retraces the reviewer's path | None: the product journey is forward-only, with no retake |
+| Prototype controls (Continue, sample-result choice, Back, Restart) | HANDOFF Day 2 Phase 3; Day 3 P2-Q4, D-9; R3; Day 4 P2-B fix F1 | Outside the phone frame, labelled "not part of the product" (beside the frame on wide screens, above it at ≤ 720 px since Day 4); Back retraces the reviewer's path | None: the product journey is forward-only, with no retake |
 
 ## 2. Technical and evidence package
 
@@ -56,3 +56,20 @@ P1's Day 1 screen-to-requirement list (`prototype/person-1/day-1/traceability-ma
 | Presentation-only code | Rule-compliance A1–A7; R1, R3 | React + Vite; no camera, location, sensor, FFT, crypto, network, storage or JS timer code | All detection, scoring and signing code written in the event window |
 | Open-source dependencies | R2; `docs/attributions.md` | React, React DOM, Vite, Vite React plugin, with licences | Event-build libraries attributed the same way |
 | Core checks, not AI | PRD §1.2 row 2, FR-5; R6 | Described as deterministic signal processing | Optional on-device VLM is stretch scope only and never feeds the score (PRD §10.2–10.3) |
+
+## 4. Day 4 assets (added Day 4 · Phase 5)
+
+| Asset | Source basis | Prototype treatment | Event treatment |
+|---|---|---|---|
+| Reviewer walkthrough (`prototype/person-2/reviewer-walkthrough/`) | Plan Day 4 P2 step 1; register T5; submission draft §3–§5, §8, §12; technical explainer; architecture diagram | Walks a reviewer through SC-01–SC-12 and the technical package; every result described as a labelled sample; table of prototype vs event | Points to the event map for when each part becomes real |
+| Roadmap (`prototype/person-2/roadmap/roadmap.md`) | Plan Day 4 P2 step 2; register T6; PRD §10, §11 via validation plan V1–V10 | Nothing built; future tense; no new hours | Red Light 0–26, Green Light 26–48; stretch gated by PRD §10 conditions; hardware attestation v2 only |
+| Event implementation map (`prototype/person-2/roadmap/event-implementation-map.md`) | Plan Day 4 P2 step 3; register T7 coverage list; `docs/event-boundary.md` | Every row "not implemented" in the prototype | 22/22 coverage items + 10 boundary items mapped to an event hour, or marked as having none |
+| Deck (`submission/deck.pdf`, source `submission/deck-source/`) | Plan Day 4 P3 step 1; register T9; claim-audit C-8, C-9, C-10; R5 | Screenshots of the actual prototype with stamps; slides tagged prototype interaction / conceptual illustration / proposed for the event; limitation slide | Roadmap slide states what the event build will make real |
+| Video package (`submission/video/README.md`, `docs/video-script.md`) | Plan Day 4 P3 step 2; register T10 | PENDING: not recorded; shot list uses the prototype's own controls; ends on the limitation | — |
+| Written submission fields (`submission/written-submission-fields.md`) | Plan Day 4 P3 step 3; register T11; submission draft | Verbatim from the audited draft; [TEAM INPUT] / [PENDING] marked | — |
+| Submission manifest (`docs/submission-manifest.md`) | Plan Day 4 P3 step 4; register T12 | Every artifact with path, status, owner, validation state and dependency; no URLs invented | Final check against the form on Day 5 |
+| Claim audit (`docs/claim-audit-log.md`) | Plan Day 4 P3 step 5; register T13 | Day 4 · Phase 5 rows; zero open violations | Video audited once recorded |
+| Validation (P2-B, `docs/blind-test-notes.md` §1) | Plan Day 4 P1 steps 1–2, 5; register T1, T3; owner decision 2026-10-03 | **COMPLETE — P2-B INTERNAL BLIND-REVIEW SIMULATION**: 9 tasks, 7 PASS · 2 CONFUSING · 0 BLOCKED. External human review not conducted | — |
+| Earlier internal UX risk audit (`docs/blind-test-notes.md` §2) | Register T2 | HIGH / MEDIUM / LOW risk pass; one HIGH fixed (F1, `journey.css`); superseded by §1 | — |
+| P2-C hardening (`docs/blind-test-notes.md` §4) | Register T2, T3 validation method | Regression at 1440 px and 390 px after F1 and F2: all branches, GPS timeout, Back, Restart, console, requests, URL, overflow, stamps, labels, rendered-text terminology scan, build, boundary scan | — |
+| Final screenshots (`prototype/person-1/screenshots-final/`) | Plan Day 4 P1 step 4; register T4 | 15 frame-only PNGs, stamped, sample labels kept; independently re-captured | Re-capture if the prototype changes after the freeze |

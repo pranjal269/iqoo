@@ -202,7 +202,7 @@ h2, h3, p { margin: 0; }
 }
 .certificate-fields { margin: 0; display: flex; flex-direction: column; gap: var(--space-1); }
 .certificate-field { display: flex; justify-content: space-between; gap: var(--space-3); font-size: var(--fs-support); }
-.certificate-field dt { color: var(--ink-2); }
+.certificate-field dt { color: var(--ink-2); min-width: 6.5em; } /* Day 5 UX QA: keeps "Geofence /" on one line (no lone "/") */
 .certificate-field dd { margin: 0; font-weight: 600; text-align: right; }
 .certificate-signing { font-size: var(--fs-support); font-weight: 600; }
 

@@ -1,6 +1,6 @@
 # Submission Draft — PRAMAAN (idea screening)
 
-**Owner:** Person 3 lane (Krishika, all lanes from Day 2) · **Created:** 2026-10-01 (Day 2 · Phase 5) · **Status:** DRAFT. Paste-ready except items marked **[TEAM INPUT]**. Final form text is locked on Day 4.
+**Owner:** Person 3 lane (Krishika, all lanes from Day 2) · **Created:** 2026-10-01 (Day 2 · Phase 5) · **Status:** DRAFT. Paste-ready except items marked **[TEAM INPUT]**. Final form text is locked on Day 4. Day 4 · Phase 4 release-candidate field text: `submission/written-submission-fields.md`.
 **Sources:** PRD (`PRAMAAN_PRD.docx`), `docs/evidence-narrative.md`, `docs/anchor-positioning-brief.md`, `docs/architecture-concept.md`, `docs/event-boundary.md`, `prototype/person-2/TECHNICAL-PACKAGE.md`, HANDOFF.md (locked terminology and decisions).
 **Rules:** every capability is described as designed / proposed (claim-audit C-2, C-10, C-11); no PRAMAAN numbers (C-1); evidence from E2 / E1 only (C-4, C-5, C-6); Anchor described from its public one-liner only (C-7).
 
@@ -16,8 +16,8 @@
 | Prior builds & hackathons | 10b | **[TEAM INPUT]** HANDOFF Q3 |
 | Android / LLM proficiency | — | **[TEAM INPUT]** not covered by any project document |
 | Prototype URL | 8 | **[OPEN]** placeholder below; the prototype runs locally; hosting not decided (Day 4–5) |
-| Video Walkthrough URL | — | Script skeleton in `docs/video-script.md` (Day 3); recording is Day 4 work (not started) |
-| Deck / Document upload | 1–13 feed the deck | Day 4 work (not started) |
+| Video Walkthrough URL | — | **[PENDING]** Not recorded; recording-ready package in `submission/video/README.md` (Day 4 · Phase 4); script `docs/video-script.md` |
+| Deck / Document upload | 1–13 feed the deck | Release candidate: `submission/deck.pdf` (Day 4 · Phase 4) |
 | Confirmation checkbox (original work) | 10 | Answer truthfully, with the disclosure in 10 (rule-compliance, Day 5 checks) |
 
 ---
@@ -83,7 +83,7 @@ What the link will point to: a public, read-only copy of this same presentation-
 
 ## 9. Event implementation roadmap (proposed, from PRD §11)
 
-- **Red Light (phone only):** geofence check first (GPS, distance, PASS / FAIL / LOW_CONFIDENCE) → Motion Consistency (gyroscope logging, optical flow, calibration) → FFT-based Moiré / Recapture Detection → fusion and app-level signing → integration and per-check fault isolation.
+- **Red Light (phone only):** Geofence / Location Binding first (GPS, distance, PASS / FAIL / LOW_CONFIDENCE) → Motion Consistency (gyroscope logging, optical flow, calibration) → FFT-based Moiré / Recapture Detection → fusion and app-level signing → integration and per-check fault isolation.
 - **Green Light (phone + laptop):** tune the FFT-based Moiré / Recapture Detection baseline against real clips filmed at the venue → build the Verifier Desk → rehearse the demo, including a screen-recapture case and a wrong-location case.
 - Measurements are taken during the event, not before. The PRD's defaults for the geofence distance and the fusion weights are confirmed or tuned against real captures at the event (PRD FR-2, FR-5, §13.3).
 
@@ -114,7 +114,7 @@ What the link will point to: a public, read-only copy of this same presentation-
 - Reusing an earlier genuine capture of the same site is outside what a single capture check can see; camera-only capture raises the bar but does not detect it (PRD §5).
 - App-level signing, not hardware-attested: a rooted or modified device can bypass app-level protections; hardware attestation is roadmap only (PRD §8.4, §10.4).
 - FFT-based Moiré / Recapture Detection will be tuned against specific screens at the venue; the screens used for tuning will be listed, with no claim of general validity (PRD FR-4).
-- Indoors, GPS can be slow or imprecise, so the geofence check carries a risk of wrong results there; this is stated, not hidden (PRD §12.1 row 3, §14.4).
+- Indoors, GPS can be slow or imprecise, so Geofence / Location Binding carries a risk of wrong results there; this is stated, not hidden (PRD §12.1 row 3, §14.4).
 - Textureless scenes or poor GPS are designed to give LOW_CONFIDENCE rather than a firm answer (PRD FR-2, FR-3).
 - The event build will use a few hardcoded demo sites, not a real site-registration system (PRD §6.2.1).
 - PRAMAAN cannot force a capture to happen (E1).

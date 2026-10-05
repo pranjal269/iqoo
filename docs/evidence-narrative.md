@@ -32,12 +32,12 @@ In MGNREGS, the geo-tagged site photograph is the proof that releases payment, a
 | Same photos reused across work stages (E2, pp. 45–46) | Camera-only capture with no gallery upload (PRD FR-9) | Not a detection check: reusing an earlier genuine capture of the same site is outside what a single capture check can see (PRD §5) |
 | Mandatory geo-tagging never done (E1) | None | PRAMAAN cannot force a capture to happen; with no capture, there is nothing to check |
 
-PRAMAAN proves capture authenticity, not scene truthfulness: none of the above tells whether the work itself meets the scheme's criteria.
+PRAMAAN proves capture authenticity, not scene truthfulness. None of the above tells whether the work itself meets the scheme's criteria.
 
 ## Pitch-ready lines (claim-audited)
 
 - "In its 2025 audit of MGNREGS in Karnataka, the CAG found geo-tagged photos 'captured from existing photograph', a photo of a different shed, and the same photos reused across work stages, used to release payments." (E2)
-- "In Odisha this July, Vigilance arrested two MGNREGS engineers over an alleged ₹42-lakh fraud. According to OmmCom News, the mandatory geo-tagging of the sites, the payment gate, was never done." (E1, context; allegation)
+- "In Odisha in July 2026, Vigilance arrested two MGNREGS engineers over an alleged ₹42-lakh fraud. According to OmmCom News, the mandatory geo-tagging of the sites, the payment gate, was never done." (E1, context; allegation)
 - "The photo is the proof of work. Today, nothing proves the photo." (framing, no numeric claim; from `docs/evidence-base.md`)
 
 ## Not used
